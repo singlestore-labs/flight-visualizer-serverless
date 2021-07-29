@@ -1,0 +1,58 @@
+{
+  "name": "singlestore-geo",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "// vite": "(faster)",
+    "dev": "vite",
+    "vite:build": "vite build",
+    "// vue cli": "(more familiar)",
+    "serve": "vue-cli-service serve",
+    "vite:serve": "vite serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "leaflet": "^1.7.1",
+    "leaflet-canvas-markers": "1.0.7",
+    "vue": "^3.0.0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.5.23",
+    "@types/luxon": "^1.25.2",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vitejs/plugin-vue": "^1.1.4",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "lint-staged": "^9.5.0",
+    "typescript": "~3.9.3",
+    "vite": "^2.0.0-beta.65"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

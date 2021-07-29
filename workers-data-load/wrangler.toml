@@ -1,0 +1,18 @@
+name = "singlestore-planes-app-data-load"
+type = "javascript"
+zone_id = ""
+route = ""
+workers_dev = true
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
+[triggers]
+crons = ["*/1 * * * *"]
+
+[vars]
+S3_BUCKET = "flight-planes-app"
+S3_FOLDER = "flights"
+S3_REGION = "us-east-1"

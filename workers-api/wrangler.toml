@@ -1,0 +1,10 @@
+name = "singlestore-planes-app-api"
+type = "javascript"
+zone_id = ""
+route = ""
+workers_dev = true
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
