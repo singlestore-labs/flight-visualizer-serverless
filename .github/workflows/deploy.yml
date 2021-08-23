@@ -10,7 +10,7 @@ on:
             - .github/workflows/deploy.yml
 
 jobs:
-    deploy:
+    deploy-api:
         runs-on: ubuntu-latest
         name: Deploy
         steps:
@@ -21,7 +21,7 @@ jobs:
                   apiToken: ${{ secrets.CF_API_TOKEN }}
                   workingDirectory: "workers-api"
 
-    deploy:
+    deploy-data-load:
         runs-on: ubuntu-latest
         name: Deploy
         steps:
