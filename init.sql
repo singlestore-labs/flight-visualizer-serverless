@@ -15,9 +15,10 @@ create rowstore table if not exists countries (
 );
 
 -- Thanks to Natural Earth for this data
--- https://www.naturalearthdata.com/downloads/
+-- https://www.naturalearthdata.com/downloads/ Load into your S3 account (or any
+-- other blob store) and then pull it in using your own credentials.
 create pipeline if not exists countries as
-load data S3 'countries/natural_earth_countries_110m.csv'
+load data S3 'natural_earth_countries_110m.csv'
 -- config '{"region": "us-east-1"}'
 -- credentials '{"aws_access_key_id": "placeholder_access_key", "aws_secret_access_key": "placeholder_secret_access_key"}'
 into table countries (boundary, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, name_short, @, name, name_long, @, @, @, abbrev, postal, name_formal, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, iso_a2, iso_a3, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @)
