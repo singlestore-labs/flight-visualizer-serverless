@@ -1,7 +1,7 @@
 create database maps;
 use maps;
 
-create rowstore table if not exists countries (
+create rowstore reference table if not exists countries (
   boundary geography,
   name_short varchar(3),
   name varchar(50),
@@ -11,13 +11,14 @@ create rowstore table if not exists countries (
   iso_a2 varchar(2),
   iso_a3 varchar(3),
   name_formal varchar(100),
-  shard key(name)
+  primary key(name)
 );
 
 -- Thanks to Natural Earth for this data
--- https://www.naturalearthdata.com/downloads/
+-- https://www.naturalearthdata.com/downloads/ Load into your S3 account (or any
+-- other blob store) and then pull it in using your own credentials.
 create pipeline if not exists countries as
-load data S3 'countries/natural_earth_countries_110m.csv'
+load data S3 'natural_earth_countries_110m.csv'
 -- config '{"region": "us-east-1"}'
 -- credentials '{"aws_access_key_id": "placeholder_access_key", "aws_secret_access_key": "placeholder_secret_access_key"}'
 into table countries (boundary, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, name_short, @, name, name_long, @, @, @, abbrev, postal, name_formal, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, iso_a2, iso_a3, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @, @)
@@ -29,7 +30,7 @@ ignore 1 lines;
 -- We only need to ingest the one file
 start pipeline countries foreground limit 1 batches;
 
-create rowstore table if not exists flights (
+create table if not exists flights (
   load_date datetime NOT NULL,
   ica024 varchar(20),
   callsign varchar(20),
@@ -48,7 +49,7 @@ create rowstore table if not exists flights (
   squawk varchar(20),
   spi bool NOT NULL,
   position_source int NOT NULL,
-  shard key(load_date, position)
+  sort key(load_date)
 );
 
 -- Thanks to OpenSky Network for this data
