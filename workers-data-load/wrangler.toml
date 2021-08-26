@@ -1,5 +1,6 @@
 name = "singlestore-planes-app-data-load"
 type = "javascript"
+account_id = "1d2468513216221dfd662e3e782657a5"
 zone_id = ""
 route = ""
 workers_dev = true

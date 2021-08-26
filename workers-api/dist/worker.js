@@ -951,19 +951,6 @@ const e=(e={})=>new Proxy(e,{get:(e,r,a)=>"handle"===r?async(r,...a)=>{for(let[t
 
 /***/ }),
 
-/***/ "./src/data/cluster_credentials.ts":
-/*!*****************************************!*\
-  !*** ./src/data/cluster_credentials.ts ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-
-
-/***/ }),
-
 /***/ "./src/data/countries_store.ts":
 /*!*************************************!*\
   !*** ./src/data/countries_store.ts ***!
@@ -1063,7 +1050,6 @@ exports.getFlightCounts = getFlightCounts;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getFlightsForDate = exports.getLoadDates = void 0;
-const cluster_credentials_1 = __webpack_require__(/*! ./cluster_credentials */ "./src/data/cluster_credentials.ts");
 const http_sdk_1 = __webpack_require__(/*! @singlestore/http-sdk */ "./node_modules/@singlestore/http-sdk/dist/http-sdk.esm.js");
 async function getLoadDates() {
     const sql = `
@@ -1078,9 +1064,9 @@ async function getLoadDates() {
 		limit 20`;
     const database = "maps";
     const response = await http_sdk_1.query({
-        host: cluster_credentials_1.CLUSTER_HOST,
-        username: cluster_credentials_1.CLUSTER_USERNAME,
-        password: cluster_credentials_1.CLUSTER_PASSWORD,
+        host: CLUSTER_HOST,
+        username: CLUSTER_USERNAME,
+        password: CLUSTER_PASSWORD,
         sql,
         database,
     });
@@ -1108,9 +1094,9 @@ async function getFlightsForDate(date) {
     const database = "maps";
     const args = [date];
     const response = await http_sdk_1.query({
-        host: cluster_credentials_1.CLUSTER_HOST,
-        username: cluster_credentials_1.CLUSTER_USERNAME,
-        password: cluster_credentials_1.CLUSTER_PASSWORD,
+        host: CLUSTER_HOST,
+        username: CLUSTER_USERNAME,
+        password: CLUSTER_PASSWORD,
         sql,
         args,
         database,
