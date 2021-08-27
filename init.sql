@@ -1,7 +1,7 @@
 create database maps;
 use maps;
 
-create rowstore reference table if not exists countries (
+create rowstore table if not exists countries (
   boundary geography,
   name_short varchar(3),
   name varchar(50),
@@ -11,7 +11,7 @@ create rowstore reference table if not exists countries (
   iso_a2 varchar(2),
   iso_a3 varchar(3),
   name_formal varchar(100),
-  primary key(name)
+  index (boundary)
 );
 
 -- Thanks to Natural Earth for this data
@@ -49,7 +49,8 @@ create table if not exists flights (
   squawk varchar(20),
   spi bool NOT NULL,
   position_source int NOT NULL,
-  sort key(load_date)
+  sort key(load_date),
+  index(position)
 );
 
 -- Thanks to OpenSky Network for this data
