@@ -1,7 +1,7 @@
 create database maps;
 use maps;
 
-create rowstore table if not exists countries (
+create rowstore reference table if not exists countries (
   boundary geography,
   name_short varchar(3),
   name varchar(50),
@@ -11,7 +11,8 @@ create rowstore table if not exists countries (
   iso_a2 varchar(2),
   iso_a3 varchar(3),
   name_formal varchar(100),
-  index (boundary)
+  index (boundary),
+  id bigint auto_increment primary key
 );
 
 -- Thanks to Natural Earth for this data
