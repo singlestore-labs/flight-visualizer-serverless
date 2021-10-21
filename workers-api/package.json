@@ -39,6 +39,6 @@
   },
   "dependencies": {
     "@singlestore/http-sdk": "0.0.2",
-    "itty-router": "^2.3.10"
+    "itty-router": "^2.4.4"
   }
 }
