@@ -17,7 +17,7 @@ This repository is a web app that shows current and past flight data in the worl
 
 ## Application
 
-Our application is [still running live](https://singlestore-planes-reference-architecture-cloudflare-worke.pages.dev/)!
+Our application is [dead](https://singlestore-planes-reference-architecture-cloudflare-worke.pages.dev/)!
 
 ## Contributing
 
