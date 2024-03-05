@@ -1,5 +1,7 @@
 # Flight Visualizer Serverless
 
+**Attention**: The code in this repository is intended for experimental use only and is not fully tested, documented, or supported by SingleStore. Visit the [SingleStore Forums](https://www.singlestore.com/forum/) to ask questions about this repository.
+
 SingleStore Hackathon project from July 2021.
 
 This repository is a web app that shows current and past flight data in the world. It was built by using serverless technology with Cloudflare Workers and SingleStore. Read [our blog post](www.google.com) for more information. Built by:
