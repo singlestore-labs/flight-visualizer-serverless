@@ -1,6 +1,3 @@
-frontend/dist
-frontend/node_modules
-workers-api/node_modules
-workers-api/dist
-workers-data-load/node_modules
-workers-data-load/dist
+.venv/
+node_modules/
+dist/
