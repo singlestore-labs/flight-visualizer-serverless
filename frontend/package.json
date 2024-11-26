@@ -18,7 +18,7 @@
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "leaflet-canvas-markers": "1.0.7",
-    "vue": "^3.0.0",
+    "vue": "^3.2.19",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
